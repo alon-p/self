@@ -33,7 +33,7 @@
       <article>
         <header class="case-header">
           <h1>Network Traffic Dashboard</h1>
-          <p class="case-tagline">One view for network health — pulling three disconnected data sources together, with an AI layer that analyzes your graphs and answers questions about them.</p>
+          <p class="case-tagline">One view for network health: pulling three disconnected data sources together, with an AI layer that analyzes your graphs and answers questions about them.</p>
           <div class="case-meta">
             <dl>
               <dt>Stack</dt><dd>Python/Django · React · PostgreSQL · InfluxDB · Redis · Heroku · OpenAI · Auth0 · Microsoft Entra</dd>
@@ -45,30 +45,30 @@
 
         <div class="case-body">
           <h2>The Challenge</h2>
-          <p>A startup wanted a single product for monitoring network health — but the data that mattered lived in three different systems that were never designed to be read together:</p>
+          <p>A startup wanted a single product for monitoring network health, but the data that mattered lived in three different systems that were never designed to be read together:</p>
           <ul>
-            <li><strong>InfluxDB</strong> — the raw monitoring time-series: the actual health metrics flowing in from the network.</li>
-            <li><strong>NetConf</strong> — the <em>configuration</em> behind that monitoring: which nodes exist and what each one is responsible for.</li>
-            <li><strong>PostgreSQL</strong> — the user side: what each user wanted to see, and which source each view should draw from.</li>
+            <li><strong>InfluxDB</strong> holds the raw monitoring time-series: the actual health metrics flowing in from the network.</li>
+            <li><strong>NetConf</strong> holds the <em>configuration</em> behind that monitoring: which nodes exist and what each one is responsible for.</li>
+            <li><strong>PostgreSQL</strong> holds the user side: what each user wanted to see, and which source each view should draw from.</li>
           </ul>
-          <p>On their own, each source answered only part of the question. Real insight meant joining a metric (Influx) to the node that produced it (NetConf) and to the view a user had set up (Postgres) — across systems with completely different shapes and query models. The startup had the product vision; they needed someone to build it to their needs.</p>
+          <p>On their own, each source answered only part of the question. Real insight meant joining a metric (Influx) to the node that produced it (NetConf) and to the view a user had set up (Postgres), across systems with completely different shapes and query models. The startup had the product vision; they needed someone to build it to their needs.</p>
 
           <h2>The Approach</h2>
-          <p>I built the backend as the consolidation layer that sits in front of all three sources and presents one coherent view to the React front end. Rather than forcing the data into a single store, the backend queries each source for what it does best — time-series from Influx, topology/config from NetConf, user preferences and view definitions from Postgres — and stitches the results together per the user's configured view. Redis backs caching and the heavier coordination work so the dashboard stays responsive.</p>
+          <p>I built the backend as the consolidation layer that sits in front of all three sources and presents one coherent view to the React front end. Rather than forcing the data into a single store, the backend queries each source for what it does best (time-series from Influx, topology/config from NetConf, user preferences and view definitions from Postgres) and stitches the results together per the user's configured view. Redis backs caching and the heavier coordination work so the dashboard stays responsive.</p>
 
           <h2>Key Technical Decisions</h2>
           <h3>Keep each source authoritative, consolidate at the API</h3>
           <p>Instead of a fragile ETL into one database, the backend reads each system in its native model and composes the answer. This kept the monitoring data fresh and avoided a brittle sync pipeline.</p>
           <h3>A reproducible, one-click deploy story on Heroku</h3>
-          <p>I set up a formal, push-button way to spin up new Heroku apps reproducibly — so a fresh environment could be stood up the same way every time, rather than hand-assembled. This made new deployments and environments predictable instead of one-off.</p>
+          <p>I set up a formal, push-button way to spin up new Heroku apps reproducibly, so a fresh environment could be stood up the same way every time, rather than hand-assembled. This made new deployments and environments predictable instead of one-off.</p>
           <h3>Flexible authentication per deployment</h3>
-          <p>Different deployments needed different login options, so I set up Auth0 with multiple connections — Microsoft Entra (federated) and an Auth0-managed user database — letting each deployment use the auth method that fit it.</p>
+          <p>Different deployments needed different login options, so I set up Auth0 with multiple connections (Microsoft Entra federated, and an Auth0-managed user database), letting each deployment use the auth method that fit it.</p>
 
           <h2>The AI Layer</h2>
-          <p>The standout feature: a user can take a graph (or several) of data from the system, hand it to the AI layer, and get it analyzed — then <em>chat</em> about it. Instead of staring at a chart and guessing, they can ask the assistant to interpret it, surface patterns, and help them find what they're looking for in the data. It turns a static visualization into something you can interrogate in plain language. Built on OpenAI, integrated into the same backend.</p>
+          <p>The standout feature: a user can take a graph (or several) of data from the system, hand it to the AI layer, and get it analyzed, then <em>chat</em> about it. Instead of staring at a chart and guessing, they can ask the assistant to interpret it, surface patterns, and help them find what they're looking for in the data. It turns a static visualization into something you can interrogate in plain language. Built on OpenAI, integrated into the same backend.</p>
 
           <h2>My Role</h2>
-          <p>I was one of two developers — I owned the <strong>backend and the infrastructure</strong> end-to-end while a teammate built the React front end. Specifically, I built and managed:</p>
+          <p>I was one of two developers. I owned the <strong>backend and the infrastructure</strong> end-to-end while a teammate built the React front end. Specifically, I built and managed:</p>
           <ul>
             <li>The connections to all three data sources and the consolidation logic.</li>
             <li>Database migrations.</li>
@@ -79,7 +79,7 @@
           </ul>
 
           <h2>Results &amp; Impact</h2>
-          <p>The startup got the unified product they envisioned: one dashboard where network health, the configuration behind it, and each user's chosen view come together — plus an AI assistant that makes the data conversational rather than something you have to decode by hand. The reproducible Heroku deploy process meant new environments could be created reliably and repeatably instead of being assembled by hand each time.</p>
+          <p>The startup got the unified product they envisioned: one dashboard where network health, the configuration behind it, and each user's chosen view come together, plus an AI assistant that makes the data conversational rather than something you have to decode by hand. The reproducible Heroku deploy process meant new environments could be created reliably and repeatably instead of being assembled by hand each time.</p>
         </div>
 
         <div class="case-cta">

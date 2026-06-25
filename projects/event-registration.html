@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Event Registration — Legacy Modernization — Alon Palgy</title>
-  <meta name="description" content="Case study: taking over a three-year-old, untested Node.js production codebase — adding tests, fixing SQL injections, migrating MySQL 5.7→8.0, retiring a Java service, and building the first CI/CD.">
+  <meta name="description" content="Case study: taking over a three-year-old, untested Node.js production codebase: adding tests, fixing SQL injections, migrating MySQL 5.7→8.0, retiring a Java service, and building the first CI/CD.">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../style.css">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Event Registration — Legacy Modernization — Alon Palgy">
-  <meta property="og:description" content="Taking over a three-year-old, untested production codebase and bringing it up to modern standards — safer, cheaper to run, and finally releasable with confidence.">
+  <meta property="og:description" content="Taking over a three-year-old, untested production codebase and bringing it up to modern standards: safer, cheaper to run, and finally releasable with confidence.">
   <meta property="og:url" content="https://alon-p.github.io/self/projects/event-registration.html">
 </head>
 <body>
@@ -33,7 +33,7 @@
       <article>
         <header class="case-header">
           <h1>Event Registration System — Legacy Modernization</h1>
-          <p class="case-tagline">Taking over a three-year-old, untested codebase running in production and bringing it up to modern standards — safer, cheaper to run, and finally releasable with confidence.</p>
+          <p class="case-tagline">Taking over a three-year-old, untested codebase running in production and bringing it up to modern standards: safer, cheaper to run, and finally releasable with confidence.</p>
           <div class="case-meta">
             <dl>
               <dt>Stack</dt><dd>Node.js/Express · MySQL · AngularJS · AWS (VPC, ALB, EC2, CloudFront, CodePipeline) · GitHub Actions</dd>
@@ -47,11 +47,11 @@
           <h2>The Challenge</h2>
           <p>I inherited a roughly three-year-old codebase with all the hallmarks of code written under deadline pressure and then left behind:</p>
           <ul>
-            <li><strong>Hardcoded SQL strings everywhere</strong> — queries assembled by hand throughout the code.</li>
+            <li><strong>Hardcoded SQL strings everywhere</strong>, assembled by hand throughout the code.</li>
             <li><strong>No real backend validation.</strong> The previous developer had used the <em>front end</em> as the gatekeeper; the backend methods trusted whatever reached them.</li>
             <li><strong>No tests at all.</strong></li>
             <li><strong>One big monorepo</strong> containing both the Node.js backend and the AngularJS front end, tangled together.</li>
-            <li>An <strong>unmaintained Java/Tomcat service</strong> alongside it that nobody fully understood — we barely knew how it ran, let alone how to change it, and it carried a few known bugs.</li>
+            <li>An <strong>unmaintained Java/Tomcat service</strong> alongside it that nobody fully understood. We barely knew how it ran, let alone how to change it, and it carried a few known bugs.</li>
           </ul>
           <p>All of this on a <strong>live service</strong>, so every change risked breaking something real users depended on.</p>
 
@@ -60,11 +60,11 @@
 
           <h2>Key Technical Decisions</h2>
           <h3>Build a safety net before changing behavior</h3>
-          <p>I introduced a test suite from scratch — going from <strong>0 to roughly 200–300 tests</strong> — so refactoring the backend stopped being a guessing game. In the process I found and fixed several <strong>SQL injection vulnerabilities</strong> that the hardcoded-SQL-plus-no-validation combination had left exposed.</p>
+          <p>I introduced a test suite from scratch (going from <strong>0 to roughly 200-300 tests</strong>), so refactoring the backend stopped being a guessing game. In the process I found and fixed several <strong>SQL injection vulnerabilities</strong> that the hardcoded-SQL-plus-no-validation combination had left exposed.</p>
           <h3>Make staging and production identical</h3>
-          <p>They had drifted apart, which made debugging painful — issues showed up in one environment and not the other. Aligning the two removed a whole class of "works on staging" confusion.</p>
+          <p>They had drifted apart, which made debugging painful. Issues showed up in one environment and not the other. Aligning the two removed a whole class of "works on staging" confusion.</p>
           <h3>Replace the Java/Tomcat service with Node modules</h3>
-          <p>Since the Java service was unmaintained, barely understood, and buggy, the pragmatic move was to reimplement its behavior inside the Node app and retire it — consolidating onto a single runtime the team could actually maintain.</p>
+          <p>Since the Java service was unmaintained, barely understood, and buggy, the pragmatic move was to reimplement its behavior inside the Node app and retire it, consolidating onto a single runtime the team could actually maintain.</p>
           <h3>Migrate MySQL 5.7 → 8.0</h3>
           <p>Driven by cost and support: 5.7 was reaching end of extended support on AWS RDS, so upgrading both kept the database supported and reduced RDS costs. Done with minimal downtime on the live service.</p>
 
@@ -73,7 +73,7 @@
           <ul>
             <li>Started with <strong>Bitbucket Pipelines + CircleCI</strong>, then migrated to <strong>GitHub Actions</strong>, and from there to <strong>AWS</strong> (CodePipeline).</li>
             <li>The <strong>front end now has a proper CI/CD pipeline</strong> that deploys to AWS automatically.</li>
-            <li>The <strong>Node backend</strong> has a test suite that <strong>GitHub Actions runs on every change</strong>; its deploy is still done manually today, but it's backed by a <strong>documented script that captures every step</strong> — so it's repeatable, not improvised.</li>
+            <li>The <strong>Node backend</strong> has a test suite that <strong>GitHub Actions runs on every change</strong>; its deploy is still done manually today, but it's backed by a <strong>documented script that captures every step</strong>, so it's repeatable, not improvised.</li>
           </ul>
 
           <h2>My Role</h2>
@@ -81,7 +81,7 @@
 
           <h2>Results &amp; Impact</h2>
           <ul>
-            <li>A previously untested, injection-prone codebase gained a <strong>200–300 test safety net</strong> and had its <strong>SQL injection holes closed</strong>.</li>
+            <li>A previously untested, injection-prone codebase gained a <strong>200-300 test safety net</strong> and had its <strong>SQL injection holes closed</strong>.</li>
             <li>The app <strong>consolidated onto a single Node runtime</strong>, dropping the unmaintainable Java/Tomcat service.</li>
             <li>The database moved to <strong>MySQL 8.0</strong>, staying supported and <strong>cutting RDS costs</strong>, with minimal downtime on a live system.</li>
             <li>Releases went from <strong>fully manual to automated</strong> (front end) and <strong>documented + test-gated</strong> (backend).</li>
@@ -89,7 +89,7 @@
           </ul>
 
           <h2>What I'd Do Differently</h2>
-          <p>I'd have invested earlier in <strong>containerizing the Node backend.</strong> That's the missing piece that would have let me automate its deploy fully instead of relying on the documented-manual process — and it's the natural next step for this project.</p>
+          <p>I'd have invested earlier in <strong>containerizing the Node backend.</strong> That's the missing piece that would have let me automate its deploy fully instead of relying on the documented-manual process, and it's the natural next step for this project.</p>
         </div>
 
         <div class="case-cta">

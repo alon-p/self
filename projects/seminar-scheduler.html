@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Seminar Scheduling Automation — Alon Palgy</title>
-  <meta name="description" content="Case study: a Python script that pulls educator data from monday.com, builds two scheduling options in memory, and emails them as a spreadsheet — with an error sheet for the data problems. In use for two years.">
+  <meta name="description" content="Case study: a Python script that pulls educator data from monday.com, builds two scheduling options in memory, and emails them as a spreadsheet, with an error sheet for the data problems. In use for two years.">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../style.css">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Seminar Scheduling Automation — Alon Palgy">
-  <meta property="og:description" content="Turning a monthly scheduling Sudoku into two ready-made options, emailed — with an error sheet that catches the data problems for you.">
+  <meta property="og:description" content="Turning a monthly scheduling Sudoku into two ready-made options, emailed, with an error sheet that catches the data problems for you.">
   <meta property="og:url" content="https://alon-p.github.io/self/projects/seminar-scheduler.html">
 </head>
 <body>
@@ -33,7 +33,7 @@
       <article>
         <header class="case-header">
           <h1>Seminar Scheduling Automation</h1>
-          <p class="case-tagline">Generating two ready-made scheduling options from monday.com data and emailing them as a spreadsheet — alongside an error sheet that flags the data problems to fix.</p>
+          <p class="case-tagline">Generating two ready-made scheduling options from monday.com data and emailing them as a spreadsheet, alongside an error sheet that flags the data problems to fix.</p>
           <div class="case-meta">
             <dl>
               <dt>Stack</dt><dd>Python · monday.com GraphQL API · Excel · email · Heroku</dd>
@@ -45,23 +45,23 @@
 
         <div class="case-body">
           <h2>The Challenge</h2>
-          <p>A small NGO that works with educators had a genuinely hard monthly job: scheduling who runs which seminar. It was a whole Sudoku — a tangle of the organization's own rules and constraints on one side, and the educators' availability and preferences on the other — and it was done by hand. Every cycle meant a lot of manual work: drafting, fixing, shifting things around, and reworking the whole board when one piece moved.</p>
-          <p>The real difficulty wasn't writing code — it was first understanding <em>their</em> rules and constraints, and how to balance them against what the educators needed.</p>
+          <p>A small NGO that works with educators had a genuinely hard monthly job: scheduling who runs which seminar. It was a whole Sudoku, a tangle of the organization's own rules and constraints on one side and the educators' availability and preferences on the other, and it was done by hand. Every cycle meant a lot of manual work: drafting, fixing, shifting things around, and reworking the whole board when one piece moved.</p>
+          <p>The real difficulty wasn't writing code. It was first understanding <em>their</em> rules and constraints, and how to balance them against what the educators needed.</p>
 
           <h2>The Approach</h2>
-          <p>After working through the details with them, we decided not to chase a fully automatic answer, but to build a script that produces <strong>two complete scheduling options</strong> each run — enough to remove most of the manual effort while leaving the humans in charge of the final call. Scheduling people is never fully automatable: someone gets sick, something gets cancelled the morning of. The goal was to do the heavy lifting, not to pretend the messy last mile away.</p>
+          <p>After working through the details with them, we decided not to chase a fully automatic answer, but to build a script that produces <strong>two complete scheduling options</strong> each run, enough to remove most of the manual effort while leaving the humans in charge of the final call. Scheduling people is never fully automatable: someone gets sick, something gets cancelled the morning of. The goal was to do the heavy lifting, not to pretend the messy last mile away.</p>
           <p>The script pulls the data from <strong>monday.com via their GraphQL API</strong>, processes everything <strong>in memory</strong>, runs a scheduling formula with <strong>different parameters for each of the two options</strong>, and emails the result as a spreadsheet.</p>
 
           <h2>Key Technical Decisions</h2>
           <h3>Two options instead of one fixed answer</h3>
           <p>The same formula run under different parameters yields two distinct schedules, giving the human schedulers room to choose and adjust rather than handing them a single take-it-or-leave-it result.</p>
           <h3>In-memory processing, no database</h3>
-          <p>The job runs about once a month (occasionally twice), over a bounded amount of data — so standing up and maintaining a database would have been cost and complexity for no benefit. Joining everything in memory was the right-sized choice.</p>
-          <h3>Email delivery, run from the Heroku interface — no web app</h3>
+          <p>The job runs about once a month (occasionally twice), over a bounded amount of data, so standing up and maintaining a database would have been cost and complexity for no benefit. Joining everything in memory was the right-sized choice.</p>
+          <h3>Email delivery, run from the Heroku interface, no web app</h3>
           <p>Rather than build and host an entire web application just to trigger a monthly script and show its output, I run it from the Heroku interface and deliver the result by email. It keeps hosting costs near zero for something that produces an output roughly once a month.</p>
 
           <h2>Handling Messy Real-World Data</h2>
-          <p>The input lives in monday.com, maintained by people — so it's never perfectly clean. There are Hebrew typos, and items get moved around between runs. Instead of failing or silently producing a wrong schedule, the script emits an <strong>error worksheet alongside the result</strong>, pointing the team straight at the data problems to find and fix in monday. The tests cover these edge cases directly, which is how I trusted it to behave sensibly when the data didn't.</p>
+          <p>The input lives in monday.com, maintained by people, so it's never perfectly clean. There are Hebrew typos, and items get moved around between runs. Instead of failing or silently producing a wrong schedule, the script emits an <strong>error worksheet alongside the result</strong>, pointing the team straight at the data problems to find and fix in monday. The tests cover these edge cases directly, which is how I trusted it to behave sensibly when the data didn't.</p>
 
           <h2>My Role</h2>
           <p>I owned it end to end: working out the scheduling rules with the client, integrating the monday.com GraphQL API, writing the in-memory scheduling logic and the two-option formula, generating the spreadsheet and error sheet, wiring up email delivery, and covering the edge cases with tests.</p>
@@ -71,11 +71,11 @@
             <li>Saved the team a lot of time and let them focus on the work that matters instead of wrestling a monthly scheduling puzzle.</li>
             <li>Replaced a manual, error-prone scheduling process with two ready-made options generated in one run.</li>
             <li>An <strong>error worksheet</strong> turns messy source data into a clear, fixable to-do list instead of a silent failure.</li>
-            <li><strong>In use for two years with zero glitches</strong> — quiet, reliable automation that just does its job each cycle.</li>
+            <li><strong>In use for two years with zero glitches</strong>: quiet, reliable automation that just does its job each cycle.</li>
           </ul>
 
           <h2>Reflection</h2>
-          <p>Not every problem needs a database, a web app, or a UI. Matching the solution to the real shape of the problem — a bounded monthly job, humans still in the loop — meant a small, well-tested script could replace a recurring headache and keep running, untouched, for years.</p>
+          <p>Not every problem needs a database, a web app, or a UI. Matching the solution to the real shape of the problem (a bounded monthly job, humans still in the loop) meant a small, well-tested script could replace a recurring headache and keep running, untouched, for years.</p>
         </div>
 
         <div class="case-cta">

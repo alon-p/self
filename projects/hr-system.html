@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HR Management System — Alon Palgy</title>
-  <meta name="description" content="Case study: a Django Admin back office for a workers' union — monthly bulk Excel reconciliation of thousands of records, two-way ZenDesk and Mailchimp integration, and Celery automation.">
+  <meta name="description" content="Case study: a Django Admin back office for a workers' union, with monthly bulk Excel reconciliation of thousands of records, two-way ZenDesk and Mailchimp integration, and Celery automation.">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../style.css">
   <meta property="og:type" content="article">
   <meta property="og:title" content="HR Management System — Alon Palgy">
-  <meta property="og:description" content="A no-nonsense back-office system for a workers' union — turning monthly piles of spreadsheets and printed paper into a single, automated workflow.">
+  <meta property="og:description" content="A no-nonsense back-office system for a workers' union, turning monthly piles of spreadsheets and printed paper into a single, automated workflow.">
   <meta property="og:url" content="https://alon-p.github.io/self/projects/hr-system.html">
 </head>
 <body>
@@ -33,7 +33,7 @@
       <article>
         <header class="case-header">
           <h1>HR Management System</h1>
-          <p class="case-tagline">A no-nonsense back-office system for a workers' union — turning monthly piles of spreadsheets and printed paper into a single, automated workflow.</p>
+          <p class="case-tagline">A no-nonsense back-office system for a workers' union, turning monthly piles of spreadsheets and printed paper into a single, automated workflow.</p>
           <div class="case-meta">
             <dl>
               <dt>Stack</dt><dd>Python/Django (Django Admin) · PostgreSQL · Celery · ZenDesk · Mailchimp</dd>
@@ -46,27 +46,27 @@
         <div class="case-body">
           <h2>The Challenge</h2>
           <p>The client is a workers' union office responsible for its members and the benefits they're entitled to. Their process was almost entirely manual: <strong>lots of hand-entered data, printed paper, and spreadsheets scattered everywhere.</strong> Member information lived across many Excel files, which made it slow to work with and easy for things to fall out of date.</p>
-          <p>Every month brought the same heavy task: a fresh Excel export of <strong>several thousand workers</strong> and their data that had to be reconciled into the system — updating each member's status, filling in missing information, and updating everything that depended on it.</p>
+          <p>Every month brought the same heavy task: a fresh Excel export of <strong>several thousand workers</strong> and their data that had to be reconciled into the system: updating each member's status, filling in missing information, and updating everything that depended on it.</p>
 
           <h2>The Approach</h2>
           <p>I built the system on <strong>Django Admin</strong> as the back office, with a monthly bulk-import workflow at its core, plus integrations to the tools the union already used (ZenDesk, Mailchimp) and scheduled automation to keep the monthly cycle on track.</p>
 
           <h2>Key Technical Decisions</h2>
-          <h3>Django Admin as the foundation — a deliberate choice, not a shortcut</h3>
+          <h3>Django Admin as the foundation: a deliberate choice, not a shortcut</h3>
           <p>For a back-office tool used by just a few staff members, Django Admin is fast and simple to stand up and does the job well. The client needed something that <em>works</em> without paying for a designer and a UX expert to build a bespoke interface. Spending that budget on functionality instead of a custom UI was the right call for this client.</p>
           <h3>Bulk Excel import built to reconcile, not just insert</h3>
-          <p>The monthly upload of a few thousand records doesn't just add rows — it updates members' statuses, completes missing fields, and updates related data. The import had to handle real, evolving data each month.</p>
+          <p>The monthly upload of a few thousand records doesn't just add rows: it updates members' statuses, completes missing fields, and updates related data. The import had to handle real, evolving data each month.</p>
           <h3>Scheduled automation with Celery</h3>
-          <p>A recurring reminder to upload the monthly Excel data, so the critical monthly step doesn't get forgotten — replacing a manual "remember to do this" with an automatic nudge.</p>
+          <p>A recurring reminder to upload the monthly Excel data, so the critical monthly step doesn't get forgotten, replacing a manual "remember to do this" with an automatic nudge.</p>
 
           <h2>Integrations</h2>
           <ul>
-            <li><strong>ZenDesk</strong> — the union used ZenDesk to manage tasks, so I built a two-way integration: new workers are created in ZenDesk from our app, and when a worker opens a ticket in ZenDesk, their details are pulled from our system. Support and member data stay in sync.</li>
-            <li><strong>Mailchimp</strong> — member details are pushed to Mailchimp to keep the email lists current for communications.</li>
+            <li><strong>ZenDesk</strong> ran the union's task management, so I built a two-way integration: new workers are created in ZenDesk from our app, and when a worker opens a ticket in ZenDesk, their details are pulled from our system. Support and member data stay in sync.</li>
+            <li><strong>Mailchimp</strong> receives member details pushed from our app, keeping the email lists current for communications.</li>
           </ul>
 
           <h2>My Role</h2>
-          <p>I was <strong>mostly the sole developer</strong>, and also <strong>led a junior developer</strong> who worked on the same codebase — sharing the work and mentoring along the way. I owned the data model, the import workflow, the integrations, and the scheduled automation.</p>
+          <p>I was <strong>mostly the sole developer</strong>, and also <strong>led a junior developer</strong> who worked on the same codebase, sharing the work and mentoring along the way. I owned the data model, the import workflow, the integrations, and the scheduled automation.</p>
 
           <h2>Results &amp; Impact</h2>
           <ul>
@@ -77,7 +77,7 @@
           </ul>
 
           <h2>Reflection</h2>
-          <p>Django Admin gets underrated. It isn't shiny React-and-Tailwind work — but for a back-office tool with a handful of users, it does a genuinely good job, fast. Matching the tool to the client's actual needs and budget mattered more than building something flashy.</p>
+          <p>Django Admin gets underrated. It isn't shiny React-and-Tailwind work, but for a back-office tool with a handful of users, it does a genuinely good job, fast. Matching the tool to the client's actual needs and budget mattered more than building something flashy.</p>
         </div>
 
         <div class="case-cta">
