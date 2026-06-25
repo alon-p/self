@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Internal Systems for a Large Nonprofit — Alon Palgy</title>
+  <meta name="description" content="Case study: building back-office systems from scratch for a large nonprofit — including a print-ordering system with a self-service regex-driven pricing engine still in use today.">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../style.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Internal Systems for a Large Nonprofit — Alon Palgy">
+  <meta property="og:description" content="Back-office systems built from scratch — including a print-ordering system with a self-service pricing engine that's still in daily use years later.">
+  <meta property="og:url" content="https://alon-p.github.io/self/projects/dror-israel.html">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="../index.html">ALON PALGY</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#work">Work</a>
+        <a href="https://github.com/alon-p" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/alonpgy" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <a class="back-link" href="../index.html#work">← Back to all work</a>
+
+      <article>
+        <header class="case-header">
+          <h1>Internal Systems for a Large Nonprofit</h1>
+          <p class="case-tagline">Building back-office systems from scratch for a large organization — including a print-ordering system with a self-service pricing engine that's still in daily use years later.</p>
+          <div class="case-meta">
+            <dl>
+              <dt>Stack</dt><dd>Python/TurboGears 2 · MariaDB · AngularJS · jQuery · Docker · AWS (Fargate / ECS)</dd>
+              <dt>Role</dt><dd>In-house full-stack developer</dd>
+              <dt>Context</dt><dd>In-house development for a large nonprofit organization</dd>
+            </dl>
+          </div>
+        </header>
+
+        <div class="case-body">
+          <h2>Overview</h2>
+          <p>For several years I was the in-house developer building the internal systems a large nonprofit relied on day to day. I built these from scratch and ran the infrastructure they lived on, managing the organization's cloud resources on AWS. The systems included a <strong>meeting-room booking</strong> tool, a <strong>physical-archive management</strong> system, and the most interesting of the three: a <strong>print-house ordering system with dynamic pricing.</strong></p>
+
+          <h2>Featured: Print-House Ordering with Dynamic Pricing</h2>
+
+          <h3>The Challenge</h3>
+          <p>Ordering prints across the organization was informal and manual. People <strong>emailed back and forth</strong> about what they needed printed, and prices were worked out through <strong>ad-hoc discussion</strong>. There was no consistent way to ask for a print job, and no consistent way to price one. With members across a large organization, that meant repeated questions and inconsistent answers.</p>
+          <p>The hard part technically: the print shop needed to <strong>add new products themselves</strong>, over time, without calling a developer every time. Pricing depended on many factors that varied per product — so I couldn't just hardcode a price formula per item.</p>
+
+          <h3>The Approach &amp; Key Technical Decision</h3>
+          <p>Rather than build a fixed pricing formula, I built a <strong>dynamic pricing engine driven by configuration the staff write themselves.</strong> Each product is defined by a set of questions and possible answers, and I wrote a <strong>simple regex-based parser</strong> that lets staff express <em>how the price should be calculated</em> from those questions and answers — directly, without code.</p>
+          <p>It was a bit complex under the hood, but it achieved the key goal: the system stays <strong>fully dynamic</strong>. The print shop can add new products and define their pricing rules on their own, with <strong>no developer in the loop.</strong> I also <strong>formalized the whole intake into forms</strong> — every question a print job needs answered is captured up front, instead of being teased out over email.</p>
+
+          <h3>Results &amp; Impact</h3>
+          <ul>
+            <li>Replaced <strong>manual email threads and price haggling</strong> with a single, structured ordering system.</li>
+            <li><strong>Formalized print requests into forms</strong>, so jobs come in complete and consistent.</li>
+            <li>The print shop can <strong>add and price new products without a developer</strong>, thanks to the self-service pricing rules.</li>
+            <li>It became the place people go to <strong>understand how to ask for prints</strong> — most of the answers they need are already in the system.</li>
+            <li><strong>It's still in use today</strong>, years later, quietly helping people across a large organization get their printing done. That longevity is the part I'm proudest of.</li>
+          </ul>
+
+          <h2>Also Built</h2>
+          <ul>
+            <li><strong>Meeting-room booking</strong> — an internal tool for reserving the organization's rooms.</li>
+            <li><strong>Physical-archive management</strong> — a system for tracking the organization's physical archive.</li>
+            <li><strong>Cloud infrastructure</strong> — I managed the organization's AWS resources, running these systems on Docker with AWS Fargate / ECS.</li>
+          </ul>
+        </div>
+
+        <div class="case-cta">
+          <a class="btn btn-secondary" href="../index.html#work">← All work</a>
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/alonpgy" rel="noopener">Connect on LinkedIn</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <small>© 2026 Alon Palgy</small>
+      <div class="footer-links">
+        <a href="https://github.com/alon-p" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/alonpgy" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
