@@ -1,0 +1,266 @@
+/* ===========================================================================
+   Alon Palgy — personal site
+   Single shared stylesheet. Zero dependencies. Dark technical theme.
+   =========================================================================== */
+
+/* ---- Design tokens ------------------------------------------------------- */
+:root {
+  --bg:         #0d1117;  /* page background (deep charcoal) */
+  --surface:    #161b22;  /* cards, tag chips, raised areas */
+  --surface-2:  #1c2230;  /* hover surface */
+  --border:     #30363d;  /* dividers, card borders */
+  --text:       #e6edf3;  /* primary text */
+  --text-muted: #9aa7b4;  /* secondary text, dates, captions */
+  --accent:     #22d3ee;  /* cyan — links, underlines, buttons */
+  --accent-dim: #155e6b;  /* muted accent for borders/rules */
+  --accent-ink: #04171b;  /* text on top of accent fills */
+
+  --max-width:  760px;    /* readable measure for prose */
+  --wide:       960px;    /* nav / wide containers */
+
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --sp-1: 0.5rem;
+  --sp-2: 1rem;
+  --sp-3: 1.5rem;
+  --sp-4: 2rem;
+  --sp-5: 3rem;
+  --sp-6: 4rem;
+
+  --radius: 8px;
+}
+
+/* ---- Reset / base -------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; color: var(--text); }
+h1 { font-size: clamp(2rem, 5vw, 2.75rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.5rem, 3.5vw, 1.9rem); letter-spacing: -0.01em; }
+h3 { font-size: 1.2rem; }
+
+p { margin: 0 0 var(--sp-2); }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible,
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+ul { padding-left: 1.25rem; }
+li { margin: 0.3rem 0; }
+
+strong { color: var(--text); font-weight: 700; }
+
+/* ---- Layout containers --------------------------------------------------- */
+.container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 var(--sp-3); }
+.container-wide { max-width: var(--wide); }
+
+main { display: block; }
+
+.section { padding: var(--sp-6) 0; border-top: 1px solid var(--border); }
+.section:first-of-type { border-top: none; }
+
+.section-title {
+  display: inline-block;
+  margin: 0 0 var(--sp-3);
+  padding-bottom: 0.35rem;
+  border-bottom: 3px solid var(--accent);
+}
+
+/* ---- Nav ----------------------------------------------------------------- */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(13, 17, 23, 0.85);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--sp-2);
+  max-width: var(--wide); margin: 0 auto; padding: 0.75rem var(--sp-3);
+  flex-wrap: wrap;
+}
+.nav-brand { font-weight: 700; color: var(--text); letter-spacing: 0.02em; }
+.nav-brand:hover { text-decoration: none; color: var(--accent); }
+.nav-links { display: flex; gap: var(--sp-3); flex-wrap: wrap; align-items: center; }
+.nav-links a { color: var(--text-muted); font-size: 0.95rem; }
+.nav-links a:hover { color: var(--accent); text-decoration: none; }
+
+/* ---- Hero ---------------------------------------------------------------- */
+.hero { padding: var(--sp-6) 0 var(--sp-5); }
+.hero h1 { margin: 0 0 var(--sp-2); }
+.hero .title { color: var(--accent); font-family: var(--mono); font-size: 0.95rem; letter-spacing: 0.04em; margin-bottom: var(--sp-2); }
+.hero .lead { font-size: 1.2rem; color: var(--text); max-width: 38ch; }
+.hero .accent-rule { width: 64px; height: 4px; background: var(--accent); border: 0; margin: var(--sp-3) 0; }
+.hero-actions { display: flex; gap: var(--sp-2); flex-wrap: wrap; margin-top: var(--sp-3); }
+
+/* ---- Buttons ------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius);
+  font-weight: 600; font-size: 0.95rem;
+  transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { background: #5ee3f2; text-decoration: none; }
+.btn-secondary { border: 1px solid var(--border); color: var(--text); }
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+/* ---- Skills -------------------------------------------------------------- */
+.skill-group { margin-bottom: var(--sp-3); }
+.skill-group h3 { margin: 0 0 0.25rem; color: var(--accent); font-size: 1rem; }
+.skill-group p { margin: 0; color: var(--text-muted); }
+.skill-group .items { color: var(--text); }
+
+.skills-intro { color: var(--text); margin: 0 0 var(--sp-2); }
+.tier-legend { color: var(--text-muted); font-size: 0.85rem; margin: 0 0 var(--sp-3); display: flex; flex-wrap: wrap; gap: 0.4rem 0.6rem; align-items: center; }
+
+/* Tier chips */
+.tier {
+  font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em;
+  padding: 0.1rem 0.45rem; border-radius: var(--radius); border: 1px solid var(--border);
+  white-space: nowrap;
+}
+.tier-core     { color: var(--accent); border-color: var(--accent); }
+.tier-strong   { color: var(--text); }
+.tier-familiar { color: var(--text-muted); }
+
+/* Expandable skill (native <details>, no JS) */
+.skill { border-bottom: 1px solid var(--border); }
+.skill summary {
+  cursor: pointer; display: flex; align-items: center; gap: 0.6rem;
+  padding: var(--sp-1) 0; list-style: none;
+}
+.skill summary::-webkit-details-marker { display: none; }
+.skill summary::after { content: "+"; margin-left: auto; color: var(--text-muted); font-family: var(--mono); }
+.skill[open] summary::after { content: "\2212"; }
+.skill summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.skill .skill-name { font-family: var(--mono); color: var(--text); }
+.skill .skill-body { padding: 0 0 var(--sp-2); }
+.skill .skill-body p { margin: 0 0 var(--sp-1); }
+.skill .seen-in { font-size: 0.85rem; color: var(--text-muted); }
+
+/* Familiar/listed-only tools: plain chips, nothing to expand */
+.skill-listed { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; padding: var(--sp-1) 0; }
+.skill-listed .skill-name { font-family: var(--mono); font-size: 0.85rem; color: var(--text); }
+
+/* ---- How I work ---------------------------------------------------------- */
+.principle { margin-bottom: var(--sp-3); }
+.principle h3 { margin: 0 0 0.25rem; }
+.principle .num { color: var(--accent); font-family: var(--mono); margin-right: 0.5rem; }
+
+/* ---- Stack tags ---------------------------------------------------------- */
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: var(--sp-2) 0; padding: 0; list-style: none; }
+.tags li, .tag {
+  font-family: var(--mono); font-size: 0.78rem;
+  background: var(--surface); color: var(--text-muted);
+  border: 1px solid var(--border); border-radius: 6px;
+  padding: 0.18rem 0.5rem;
+}
+
+/* ---- Project teasers ----------------------------------------------------- */
+.teasers { display: grid; gap: var(--sp-3); }
+.teaser {
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); padding: var(--sp-3);
+  transition: border-color 150ms ease, transform 150ms ease;
+}
+.teaser:hover { border-color: var(--accent-dim); }
+.teaser h3 { margin: 0 0 0.25rem; }
+.teaser h3 a { color: var(--text); }
+.teaser h3 a:hover { color: var(--accent); text-decoration: none; }
+.teaser .tagline { color: var(--text-muted); margin: 0 0 var(--sp-1); }
+.teaser .more { font-weight: 600; font-size: 0.9rem; }
+
+/* ---- Timeline ------------------------------------------------------------ */
+.timeline { list-style: none; padding: 0; margin: 0; }
+.timeline > li { padding: 0 0 var(--sp-3) var(--sp-3); border-left: 2px solid var(--border); position: relative; }
+.timeline > li::before {
+  content: ""; position: absolute; left: -7px; top: 6px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--bg); border: 2px solid var(--accent);
+}
+.timeline > li:last-child { padding-bottom: 0; }
+.timeline .role { font-weight: 700; }
+.timeline .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.35rem; }
+.timeline ul { margin: 0.25rem 0 0; }
+
+/* ---- Open-source cards --------------------------------------------------- */
+.repos { display: grid; gap: var(--sp-3); }
+.repo {
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); padding: var(--sp-3);
+}
+.repo h3 { margin: 0 0 0.25rem; font-family: var(--mono); font-size: 1.05rem; }
+.repo-role {
+  font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--accent); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 0.1rem 0.4rem; margin-left: 0.4rem; vertical-align: middle;
+}
+.repo p { color: var(--text-muted); margin: 0 0 var(--sp-1); }
+.repo .links { display: flex; gap: var(--sp-2); flex-wrap: wrap; font-size: 0.9rem; }
+
+/* ---- Case study (project pages) ----------------------------------------- */
+.back-link { display: inline-block; margin: var(--sp-3) 0 0; color: var(--text-muted); font-size: 0.9rem; }
+.back-link:hover { color: var(--accent); }
+
+.case-header { padding: var(--sp-4) 0 var(--sp-2); }
+.case-header h1 { margin: 0 0 var(--sp-2); }
+.case-tagline { color: var(--text-muted); font-size: 1.15rem; font-style: italic; max-width: 55ch; }
+.case-meta { margin: var(--sp-3) 0 0; padding: var(--sp-2) 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.case-meta dl { display: grid; grid-template-columns: auto 1fr; gap: 0.3rem var(--sp-2); margin: 0; }
+.case-meta dt { color: var(--accent); font-family: var(--mono); font-size: 0.8rem; }
+.case-meta dd { margin: 0; color: var(--text); }
+
+.case-body h2 { margin: var(--sp-5) 0 var(--sp-2); }
+.case-body h3 { margin: var(--sp-3) 0 0.5rem; color: var(--accent); }
+.case-body blockquote {
+  margin: var(--sp-3) 0; padding: var(--sp-2) var(--sp-3);
+  border-left: 3px solid var(--accent-dim); background: var(--surface);
+  color: var(--text-muted); border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.case-cta { margin: var(--sp-5) 0 0; padding-top: var(--sp-4); border-top: 1px solid var(--border); display: flex; gap: var(--sp-2); flex-wrap: wrap; }
+
+/* ---- Footer -------------------------------------------------------------- */
+.footer { border-top: 1px solid var(--border); padding: var(--sp-4) 0; color: var(--text-muted); }
+.footer-inner { display: flex; justify-content: space-between; gap: var(--sp-2); flex-wrap: wrap; align-items: center; }
+.footer-links { display: flex; gap: var(--sp-3); }
+.footer small { color: var(--text-muted); }
+
+/* ---- Responsive ---------------------------------------------------------- */
+@media (max-width: 640px) {
+  .nav-inner { justify-content: center; }
+  .nav-links { gap: var(--sp-2); justify-content: center; }
+  .section { padding: var(--sp-5) 0; }
+  .hero { padding: var(--sp-5) 0 var(--sp-4); }
+  .case-meta dl { grid-template-columns: 1fr; }
+  .case-meta dt { margin-top: 0.4rem; }
+}
+
+/* ---- Print --------------------------------------------------------------- */
+@media print {
+  :root { --bg: #fff; --surface: #fff; --text: #111; --text-muted: #444; --border: #ccc; --accent: #036; }
+  .nav, .hero-actions, .case-cta, .back-link { display: none; }
+  body { font-size: 12pt; }
+  a { color: #036; }
+}
