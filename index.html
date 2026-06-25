@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alon Palgy — Backend / Full-Stack Developer</title>
+  <meta name="description" content="Alon Palgy — backend-leaning full-stack developer with 12+ years in Python/Django and Node.js. I take ownership end-to-end: data, integrations, CI/CD, and production.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alon Palgy — Backend / Full-Stack Developer">
+  <meta property="og:description" content="Backend-leaning full-stack developer, 12+ years. I own things end-to-end — and I'm not satisfied until I understand how all of it works.">
+  <meta property="og:url" content="https://alon-p.github.io/self/">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">ALON PALGY</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#work">Work</a>
+        <a href="#open-source">Open Source</a>
+        <a href="https://github.com/alon-p" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/alonpgy" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <p class="title">BACKEND / FULL-STACK DEVELOPER</p>
+        <h1>Alon Palgy</h1>
+        <hr class="accent-rule">
+        <p class="lead">Backend-leaning full-stack developer, 12+ years. I take ownership end-to-end — I like to understand how everything works, keep it under control, and ship it to production myself.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/alon-p" rel="noopener">GitHub</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/alonpgy" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <p>I'm a backend-leaning full-stack developer with 12+ years of experience, mostly in Python/Django and Node.js. What defines how I work is <strong>ownership</strong> — I want to understand how a system works, keep it under my control, and be the one who carries it all the way to production.</p>
+        <p>I'm drawn to the complicated parts other people would rather avoid: untangling mismatched data sources, modernizing legacy services, and building the back-office tools and automations that keep an organization running. I'm comfortable taking responsibility for the whole path — CI/CD, integrations, deployments, and production operations — not just the code that's fun to write.</p>
+        <p>I've done this across network monitoring, event management, and HR for a range of clients, and I bring the same instinct to each: make it work, make it understandable, and make sure I didn't break anything on the way.</p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+
+        <p class="skills-intro">This isn't a checklist of everything I've ever touched — it's an honest map of what I actually know, and how well. I've marked each technology so you can tell the difference between the tools I build with every day and the ones I've simply worked with. Expand any of them to read more.</p>
+        <p class="tier-legend">
+          <span class="tier tier-core">Core</span> daily ·
+          <span class="tier tier-strong">Strong</span> shipped real work ·
+          <span class="tier tier-familiar">Familiar</span> worked with
+        </p>
+
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <details class="skill">
+            <summary><span class="skill-name">Python</span> <span class="tier tier-core">Core</span></summary>
+            <div class="skill-body">
+              <p>My main language for about 12 years, and what I write every day. I was around for the end of Python 2.7 and have spent the last six years in Python 3 — a language and community I genuinely enjoy. It's the tool I reach for first: expressive, quick to build in, and backed by a deep ecosystem, so I can take most problems from idea to a clean, well-tested solution without fighting the language. I never miss the annual PyCon Israel convention — come say hello, see you there.</p>
+              <p class="seen-in">Seen in: <a href="projects/seminar-scheduler.html">Seminar Scheduling Automation</a></p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">JavaScript / Node.js</span> <span class="tier tier-strong">Strong</span></summary>
+            <div class="skill-body">
+              <p>About two years building on a Node/Express backend. It's deliberately bare-bones — you live in middleware and assemble a lot yourself, with no ORM or even a query builder out of the box. I added Knex as a query builder, used it to close a number of SQL-injection holes, and defined a DB schema that the integration tests rebuild from scratch on every run. One thing I genuinely prefer: npm keeps a project's modules in its own folder, tidier than remembering to activate a virtualenv. Beyond that, given the choice, I reach for Python on the backend.</p>
+              <p class="seen-in">Seen in: <a href="projects/event-registration.html">Event Registration System</a></p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">SQL</span> <span class="tier tier-core">Core</span></summary>
+            <div class="skill-body">
+              <p>Every system I've built runs on a relational database — MySQL, then MariaDB, and now PostgreSQL by default. I'm comfortable with the database <em>thinking</em>, not just the syntax: I've worked with B-tree indexes, run <code>EXPLAIN</code> and read its output, and picked sensible index candidates — though I'll be honest that I haven't done heavy performance tuning at scale. I like the ORM model approach, and I'm happy to drop to raw SQL when it's the clearer tool.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="skill-group">
+          <h3>Backend</h3>
+          <details class="skill">
+            <summary><span class="skill-name">Django</span> <span class="tier tier-core">Core</span></summary>
+            <div class="skill-body">
+              <p>Six years of Django, and the framework I reach for on every project I can. I've also mentored several juniors on how to use it well, and I work with it mostly alongside Django REST Framework. What I love is that it's genuinely batteries-included: a test class that spins up a real test database from your migrations; built-in i18n; pluggable file storage with a ready-made S3 package; a mail layer with a fake backend for tests; and Django Admin, which is excellent for back-office tools. Its strong conventions even pay off on legacy code — I once inherited a badly-written Django project and got my bearings fast, precisely because the framework dictates how a project should be laid out.</p>
+              <p class="seen-in">Seen in: <a href="projects/network-dashboard.html">Network Traffic Dashboard</a>, <a href="projects/hr-system.html">HR Management System</a></p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">Celery</span> <span class="tier tier-strong">Strong</span></summary>
+            <div class="skill-body">
+              <p>My go-to when work needs to happen asynchronously or on a schedule. It integrates cleanly with Django and is easy to run with Redis as the broker. On the HR system I used it to move heavy bulk-import work out of the request cycle and to fire a scheduled monthly reminder — replacing a manual "remember to do this" step with something automatic.</p>
+              <p class="seen-in">Seen in: <a href="projects/hr-system.html">HR Management System</a></p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">Express</span> <span class="tier tier-strong">Strong</span></summary>
+            <div class="skill-body">
+              <p>About two years on a Node/Express backend — real, shipped work, middleware-heavy, with Knex for queries and a schema the tests rebuild each run. Not my preferred backend stack, but I know my way around it.</p>
+              <p class="seen-in">Seen in: <a href="projects/event-registration.html">Event Registration System</a></p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">Flask</span> <span class="tier tier-strong">Strong</span></summary>
+            <div class="skill-body">
+              <p>My pick for a slim Python backend when I need something simple and database-free to start with. I built one project's MVP on Flask and later migrated it to Django as it grew up — the right tool for that stage.</p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">TurboGears</span> <span class="tier tier-familiar">Familiar</span></summary>
+            <div class="skill-body">
+              <p>An older framework with solid foundations and a great solo maintainer. I used it mostly because friends did, back before Django was as strong as it is today. I built around three systems on it — two of which are still running today, with later modernization like Microsoft Entra login bolted on.</p>
+              <p class="seen-in">Seen in: <a href="projects/dror-israel.html">Internal Systems (Dror-Israel)</a></p>
+            </div>
+          </details>
+        </div>
+
+        <div class="skill-group">
+          <h3>Databases</h3>
+          <details class="skill">
+            <summary><span class="skill-name">PostgreSQL</span> <span class="tier tier-core">Core</span></summary>
+            <div class="skill-body">
+              <p>My default database today. It feels the most modern of the ones I've used — convenient types, and a deep well of built-in functions and extensions that save you from reinventing things. It's what I'll choose for anything greenfield.</p>
+              <p class="seen-in">Seen in: <a href="projects/network-dashboard.html">Network Traffic Dashboard</a>, <a href="projects/hr-system.html">HR Management System</a></p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">MySQL / MariaDB</span> <span class="tier tier-strong">Strong</span></summary>
+            <div class="skill-body">
+              <p>Used across earlier systems — including a live MySQL 5.7 → 8.0 migration with minimal downtime on a production service. I'm comfortable here; Postgres is just my preference now.</p>
+              <p class="seen-in">Seen in: <a href="projects/event-registration.html">Event Registration System</a>, <a href="projects/dror-israel.html">Internal Systems (Dror-Israel)</a></p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">Redis</span> <span class="tier tier-strong">Strong</span></summary>
+            <div class="skill-body">
+              <p>Mostly as the Celery broker, and as a fast cache/store when a project needs one. Easy to reach for.</p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">InfluxDB</span> <span class="tier tier-familiar">Familiar</span></summary>
+            <div class="skill-body">
+              <p>The time-series source in the network dashboard — one of the three data sources I reconciled into a single health view.</p>
+              <p class="seen-in">Seen in: <a href="projects/network-dashboard.html">Network Traffic Dashboard</a></p>
+            </div>
+          </details>
+        </div>
+
+        <div class="skill-group">
+          <h3>Testing</h3>
+          <p class="skills-intro">Testing runs through almost everything I do — it's how I move through legacy code and modernize without breaking what works. I'd rather test the complicated scenarios in code than reproduce them by hand, and I wire the suite into the pipeline so it runs on every pull request and before every deploy. With good tests, refactoring stops being scary — and that's only more true with AI agents: solid tests let me see what a refactor actually changed and keep the result verified rather than one big pile of slop.</p>
+          <details class="skill">
+            <summary><span class="skill-name">Django test framework</span> <span class="tier tier-core">Core</span></summary>
+            <div class="skill-body">
+              <p>My testing home. I love that it stands up a real test database from your migrations and resets it between tests — so writing meaningful, DB-backed integration tests is effortless and still fast. I use clock-faking to cover time-dependent behaviour, too.</p>
+              <p class="seen-in">Seen in: <a href="projects/network-dashboard.html">Network Traffic Dashboard</a>, <a href="projects/hr-system.html">HR Management System</a></p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">Mocha / Supertest</span> <span class="tier tier-strong">Strong</span></summary>
+            <div class="skill-body">
+              <p>The stack I used to build the first integration test suite on the Node/Express event-registration project, where testing had been manual. Works well; the one thing I missed from Django was automatic test-database creation and reset, so I wired that up myself around the Knex schema.</p>
+              <p class="seen-in">Seen in: <a href="projects/event-registration.html">Event Registration System</a></p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">pytest</span> <span class="tier tier-familiar">Familiar</span></summary>
+            <div class="skill-body">
+              <p>I used it on a Flask project, partly to learn it, and set up some fixtures. I like it — though for Django work I still prefer the built-in test framework.</p>
+            </div>
+          </details>
+          <div class="skill-listed"><span class="skill-name">Vitest</span> <span class="tier tier-familiar">Familiar</span> <span class="seen-in">— some React component tests</span></div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Frontend</h3>
+          <p class="skills-intro">I'm backend-leaning, and honest about it: the front end is the supporting cast to my backend work. I do the straightforward parts well and know where my edges are.</p>
+          <details class="skill">
+            <summary><span class="skill-name">React</span> <span class="tier tier-strong">Strong</span></summary>
+            <div class="skill-body">
+              <p>I've used React on several projects, mostly to consume the API I'm building. I'll be honest that I'm not on the bleeding edge — the JavaScript world moves fast and the ecosystem reshapes itself every six months — but I can hold my own in a React codebase, especially a well-organized one. I like the SPA approach (when it isn't overkill) and the fast feedback of a live dev server, and I've written some component tests with Vitest.</p>
+              <p class="seen-in">Seen in: <a href="projects/network-dashboard.html">Network Traffic Dashboard</a></p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">Front-end JavaScript</span> <span class="tier tier-familiar">Familiar</span></summary>
+            <div class="skill-body">
+              <p>I build the practical things — forms, buttons, displaying data — and do them solidly. Lately I've been experimenting with HTMX, building interactive pages from Django templates without reaching for React. I'm "okay, not great," and I'd like to keep getting better at writing cleaner, more optimized front-end code.</p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">AngularJS · Vue.js · jQuery</span> <span class="tier tier-familiar">Familiar</span></summary>
+            <div class="skill-body">
+              <p>Older front-end stacks I've worked in. I can read the docs and be productive in any of them. I have a soft spot for jQuery, honestly — it's a shame it's not fashionable anymore; it came from an era of approachable JavaScript projects that were easy to pick up and work with.</p>
+              <p class="seen-in">Seen in: <a href="projects/dror-israel.html">Internal Systems (Dror-Israel)</a></p>
+            </div>
+          </details>
+        </div>
+
+        <div class="skill-group">
+          <h3>Cloud &amp; DevOps</h3>
+          <p class="skills-intro">This is squarely my territory — "ship it to production myself" is a big part of how I work. I treat infrastructure as code and pipelines as the source of truth.</p>
+          <details class="skill">
+            <summary><span class="skill-name">AWS</span> <span class="tier tier-core">Core</span></summary>
+            <div class="skill-body">
+              <p>I deploy and run our apps on AWS and have gone hands-on with a good slice of it: configuring ALB + WAF with rules, running tasks on ECS (typically an Nginx container fronting Django, sometimes with Celery), scheduling with EventBridge Scheduler, and working across EC2, S3, EFS, Route 53, RDS, IAM, CloudWatch, CodePipeline + CodeBuild, and the occasional Lambda. Almost all of it is managed in Terraform — I only drop into the console when I'm exploring something.</p>
+              <p class="seen-in">Seen in: <a href="projects/event-registration.html">Event Registration System</a>, <a href="projects/dror-israel.html">Internal Systems (Dror-Israel)</a></p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">CI/CD</span> <span class="tier tier-core">Core</span></summary>
+            <div class="skill-body">
+              <p>I build pipelines so that once you push or merge a PR, the app gets tested — and tells you if something failed — and then deploys, with nothing done by hand. On GitHub Actions or Bitbucket Pipelines I run the suite and trigger the deploy; on AWS that means CodePipeline and CodeBuild turning the code into a container image. I built the first pipeline on a project where releases had been entirely manual. A pipeline I like also documents the process — so the steps live in version control instead of a README that drifts, or in the head of whoever set it up.</p>
+              <p class="seen-in">Seen in: <a href="projects/event-registration.html">Event Registration System</a></p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">Docker</span> <span class="tier tier-strong">Strong</span></summary>
+            <div class="skill-body">
+              <p>Locally, I use Docker to bring up the services I need — Postgres, Nginx, Redis — scoped to a project, and to test how the app behaves inside a container. I work mostly through docker-compose, which doubles as a clean infrastructure-as-code description of the local stack. It's also how I make life easy for a front-end teammate: <code>docker-compose up</code> and the whole backend is running, nothing to install.</p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">Terraform</span> <span class="tier tier-strong">Strong</span></summary>
+            <div class="skill-body">
+              <p>I keep a Terraform repository as the record of all infrastructure changes — IaC is the default, and the console is only for exploration. It's how I keep AWS under control rather than clicking things into existence.</p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">Heroku</span> <span class="tier tier-strong">Strong</span></summary>
+            <div class="skill-body">
+              <p>I built a reproducible "one-click new app" setup: a JSON manifest declaring everything an app needs — env vars, services, add-ons — plus a GitHub connection so it pulls and builds from the repo. It takes real fluency with Heroku's services and buildpack conventions to get that smooth.</p>
+              <p class="seen-in">Seen in: <a href="projects/network-dashboard.html">Network Traffic Dashboard</a></p>
+            </div>
+          </details>
+        </div>
+
+        <div class="skill-group">
+          <h3>Integrations &amp; AI</h3>
+          <details class="skill">
+            <summary><span class="skill-name">OpenAI integration</span> <span class="tier tier-strong">Strong</span></summary>
+            <div class="skill-body">
+              <p>I built the integration plumbing for the network dashboard's AI feature. A colleague designed the prompts; my job was to combine the relevant data with them, send the request to the OpenAI API asynchronously through Celery, then receive the response, persist it, display it, and let the user keep chatting. It was deliberately simple for the time — no tools or function-calling — because the customer wanted to test whether it would add value. It didn't end up moving the needle for them, but it was a real, shipped integration with a sound async architecture.</p>
+              <p class="seen-in">Seen in: <a href="projects/network-dashboard.html">Network Traffic Dashboard</a></p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">Auth0 / Microsoft Entra</span> <span class="tier tier-strong">Strong</span></summary>
+            <div class="skill-body">
+              <p>I integrated an external-provider auth flow with Auth0, which meant adapting the app to support it and enabling it per deployment, per customer — some clients use it, some don't. That involved working directly with Auth0 (getting to grips with their tiers and glossary) and wiring Microsoft Entra as a federated connection alongside an Auth0-managed user database.</p>
+              <p class="seen-in">Seen in: <a href="projects/network-dashboard.html">Network Traffic Dashboard</a></p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">ZenDesk</span> <span class="tier tier-strong">Strong</span></summary>
+            <div class="skill-body">
+              <p>I built a successful two-way integration: pushing data into ZenDesk from our app, and exposing a webhook so ZenDesk could notify us when something changed. A genuinely pleasant API to work with.</p>
+              <p class="seen-in">Seen in: <a href="projects/hr-system.html">HR Management System</a></p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">Mailchimp</span> <span class="tier tier-familiar">Familiar</span></summary>
+            <div class="skill-body">
+              <p>Reading and using their API to keep member details synced to the right email lists.</p>
+              <p class="seen-in">Seen in: <a href="projects/hr-system.html">HR Management System</a></p>
+            </div>
+          </details>
+          <details class="skill">
+            <summary><span class="skill-name">Claude Code</span> <span class="tier tier-strong">Strong</span></summary>
+            <div class="skill-body">
+              <p>I use Claude Code every day and keep learning how to get more out of it — it noticeably speeds up how I build and ship. The way I work with it reflects how I work generally: I write instructions and plans that bake in testing and clear, ordered steps, so the output stays controlled instead of turning into one big pile of slop. (I've also published a small Claude skill, project-readme-skill — see Open Source.)</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- How I work -->
+    <section class="section" id="how-i-work">
+      <div class="container">
+        <h2 class="section-title">How I Work</h2>
+
+        <div class="principle">
+          <h3><span class="num">01</span>I take ownership</h3>
+          <p>I like to own what I work on end-to-end. I'm not comfortable with parts of the system being a black box — I want to understand how everything works and keep it under control, from the database to the deploy.</p>
+        </div>
+        <div class="principle">
+          <h3><span class="num">02</span>Understand before I change</h3>
+          <p>When I get handed a messy codebase, the first thing I do is figure out what's actually going on. Before touching anything, I want a real picture of how it runs.</p>
+        </div>
+        <div class="principle">
+          <h3><span class="num">03</span>Document the setup</h3>
+          <p>As I learn a system, I write down how to set it up. Turning tribal knowledge into documentation makes the project maintainable — for me and for whoever comes next.</p>
+        </div>
+        <div class="principle">
+          <h3><span class="num">04</span>Add tests so I know I didn't break anything</h3>
+          <p>I add tests before and as I modernize, because I genuinely need to know I haven't broken something that was working. Tests are how I move through legacy code with confidence instead of crossing my fingers.</p>
+        </div>
+        <div class="principle">
+          <h3><span class="num">05</span>Modernize pragmatically</h3>
+          <p>Once I understand it and it's covered, I modernize whatever I can. I favor the tool that solves the problem well over the one that looks impressive — the right call for the client beats the shiny one.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected work -->
+    <section class="section" id="work">
+      <div class="container">
+        <h2 class="section-title">Selected Work</h2>
+        <div class="teasers">
+
+          <article class="teaser">
+            <h3><a href="projects/network-dashboard.html">Network Traffic Dashboard</a></h3>
+            <p class="tagline">One view for network health — three disconnected data sources unified, with an AI layer that analyzes your graphs and answers questions about them.</p>
+            <ul class="tags">
+              <li>Python</li><li>Django</li><li>React</li><li>PostgreSQL</li><li>InfluxDB</li><li>OpenAI</li>
+            </ul>
+            <a class="more" href="projects/network-dashboard.html">Read the case study →</a>
+          </article>
+
+          <article class="teaser">
+            <h3><a href="projects/event-registration.html">Event Registration System — Legacy Modernization</a></h3>
+            <p class="tagline">Taking over a three-year-old, untested production codebase and bringing it up to modern standards — safer, cheaper to run, and finally releasable with confidence.</p>
+            <ul class="tags">
+              <li>Node.js</li><li>Express</li><li>MySQL</li><li>AWS</li><li>GitHub Actions</li>
+            </ul>
+            <a class="more" href="projects/event-registration.html">Read the case study →</a>
+          </article>
+
+          <article class="teaser">
+            <h3><a href="projects/hr-system.html">HR Management System</a></h3>
+            <p class="tagline">A no-nonsense back office for a workers' union — turning monthly piles of spreadsheets into a single, automated workflow.</p>
+            <ul class="tags">
+              <li>Python</li><li>Django</li><li>Celery</li><li>ZenDesk</li><li>Mailchimp</li>
+            </ul>
+            <a class="more" href="projects/hr-system.html">Read the case study →</a>
+          </article>
+
+          <article class="teaser">
+            <h3><a href="projects/dror-israel.html">Internal Systems for a Large Nonprofit</a></h3>
+            <p class="tagline">Back-office systems built from scratch — including a print-ordering system with a self-service pricing engine that's still in daily use years later.</p>
+            <ul class="tags">
+              <li>Python</li><li>TurboGears&nbsp;2</li><li>MariaDB</li><li>AngularJS</li><li>AWS</li>
+            </ul>
+            <a class="more" href="projects/dror-israel.html">Read the case study →</a>
+          </article>
+
+          <article class="teaser">
+            <h3><a href="projects/seminar-scheduler.html">Seminar Scheduling Automation</a></h3>
+            <p class="tagline">A monthly scheduling Sudoku turned into two ready-made options from monday.com data, emailed as a spreadsheet — with an error sheet that flags the data problems to fix. Two years in use, zero glitches.</p>
+            <ul class="tags">
+              <li>Python</li><li>monday.com&nbsp;API</li><li>Excel</li><li>Heroku</li>
+            </ul>
+            <a class="more" href="projects/seminar-scheduler.html">Read the case study →</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience timeline -->
+    <section class="section" id="experience">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <ul class="timeline">
+          <li>
+            <div class="role">Full-Stack Developer</div>
+            <div class="meta">Drorsoft · 2020 – Present</div>
+            <ul>
+              <li>Building and maintaining web applications for clients in network monitoring, event management, and HR.</li>
+              <li>Own CI/CD, integration testing, deployments, and production operations across client projects.</li>
+              <li>Mentor junior developers and lead knowledge-sharing within the team.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="role">Education Program Coordinator</div>
+            <div class="meta">Hameorer · 2015 – 2020</div>
+            <ul>
+              <li>Planned and led experiential education programs for groups of university students and IDF units.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="role">Full-Stack Developer</div>
+            <div class="meta">Dror-Israel · 2009 – 2015</div>
+            <ul>
+              <li>Built internal systems from scratch: meeting-room booking, print-house ordering with dynamic pricing, and physical-archive management.</li>
+              <li>Managed the organization's cloud infrastructure and resources on AWS.</li>
+              <li>Stack: Python/TurboGears&nbsp;2, MariaDB, AngularJS, jQuery, Docker, AWS Fargate.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="role">B.Ed in Informal Education</div>
+            <div class="meta">Beit Berl College · 2009 – 2012</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Open source -->
+    <section class="section" id="open-source">
+      <div class="container">
+        <h2 class="section-title">Open Source &amp; Side Projects</h2>
+        <p>Things I've built outside client work — small, but they show how I like to build.</p>
+        <div class="repos">
+
+          <article class="repo">
+            <h3>django-admin-applist-order</h3>
+            <p>A small Django library for controlling the ordering of the app list in Django Admin — packaged and published to PyPI. Extracted from real back-office work and shared.</p>
+            <ul class="tags"><li>Python</li><li>Django</li></ul>
+            <div class="links">
+              <a href="https://github.com/alon-p/django-admin-applist-order" rel="noopener">GitHub →</a>
+              <a href="https://pypi.org/project/django-admin-applist-order/" rel="noopener">PyPI →</a>
+            </div>
+          </article>
+
+          <article class="repo">
+            <h3>project-readme-skill</h3>
+            <p>A Claude skill for creating and maintaining project README files.</p>
+            <ul class="tags"><li>Claude Code skill</li></ul>
+            <div class="links">
+              <a href="https://github.com/alon-p/project-readme-skill" rel="noopener">GitHub →</a>
+            </div>
+          </article>
+
+          <article class="repo">
+            <h3>django-poetry-opinionated-cookiecutter <span class="repo-role">contributor</span></h3>
+            <p>A contribution to an opinionated project template for scaffolding new Django projects with Poetry — the kind of convention-driven, batteries-included setup I reach for. Contributing back to a tool I use.</p>
+            <ul class="tags"><li>Python</li><li>Django</li><li>Poetry</li><li>cookiecutter</li></ul>
+            <div class="links">
+              <a href="https://github.com/alonisser/django-poetry-opinionated-cookiecutter" rel="noopener">GitHub →</a>
+            </div>
+          </article>
+
+          <article class="repo">
+            <h3>online-metronome</h3>
+            <p>A self-contained, in-browser metronome — a fun side project, live on GitHub Pages.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <div class="links">
+              <a href="https://alon-p.github.io/online-metronome/" rel="noopener">Live →</a>
+              <a href="https://github.com/alon-p/online-metronome" rel="noopener">GitHub →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <small>© 2026 Alon Palgy</small>
+      <div class="footer-links">
+        <a href="https://github.com/alon-p" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/alonpgy" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
