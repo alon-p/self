@@ -255,6 +255,7 @@ main { display: block; }
   .hero { padding: var(--sp-5) 0 var(--sp-4); }
   .case-meta dl { grid-template-columns: 1fr; }
   .case-meta dt { margin-top: 0.4rem; }
+  .case-cta { margin-bottom: var(--sp-4); }
 }
 
 /* ---- Print --------------------------------------------------------------- */
