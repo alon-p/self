@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alon Palgy — Backend / Full-Stack Developer</title>
-  <meta name="description" content="Alon Palgy: backend-leaning full-stack developer with 12+ years in Python/Django and Node.js. I take ownership end-to-end: data, integrations, CI/CD, and production.">
+  <title>Alon Palgy — AI-Augmented Backend &amp; Full-Stack Developer</title>
+  <meta name="description" content="Alon Palgy: AI-augmented backend and full-stack developer, 12+ years in Python/Django and Node.js. I build and ship end-to-end — data, integrations, CI/CD, and production — with AI in the loop.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="style.css">
 
   <!-- Open Graph / social -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Alon Palgy — Backend / Full-Stack Developer">
-  <meta property="og:description" content="Backend-leaning full-stack developer, 12+ years. I own things end-to-end, and I'm not satisfied until I understand how all of it works.">
+  <meta property="og:title" content="Alon Palgy — AI-Augmented Backend &amp; Full-Stack Developer">
+  <meta property="og:description" content="AI-augmented backend & full-stack developer, 12+ years. I build and ship end-to-end, from data and integrations to CI/CD and production.">
   <meta property="og:url" content="https://alon-p.github.io/self/">
   <meta name="twitter:card" content="summary">
 </head>
@@ -23,8 +23,8 @@
       <nav class="nav-links" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#work">Work</a>
-        <a href="#skills">Skills</a>
         <a href="#open-source">Open Source</a>
+        <a href="#skills">Skills</a>
         <a href="https://github.com/alon-p" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/alonpgy" rel="noopener">LinkedIn</a>
       </nav>
@@ -36,10 +36,9 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container">
-        <p class="title">BACKEND / FULL-STACK DEVELOPER</p>
         <h1>Alon Palgy</h1>
         <hr class="accent-rule">
-        <p class="lead">Backend-leaning full-stack developer, 12+ years. I take ownership end-to-end. I like to understand how everything works, keep it under control, and ship it to production myself.</p>
+        <p class="lead">AI-Augmented Backend &amp; Full-Stack Developer · 12+ years</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://github.com/alon-p" rel="noopener">GitHub</a>
           <a class="btn btn-secondary" href="https://www.linkedin.com/in/alonpgy" rel="noopener">LinkedIn</a>
@@ -51,9 +50,18 @@
     <section class="section" id="about">
       <div class="container">
         <h2 class="section-title">About</h2>
-        <p>I'm a backend-leaning full-stack developer with 12+ years of experience, mostly in Python/Django and Node.js. What defines how I work is <strong>ownership</strong>. I want to understand how a system works, keep it under my control, and be the one who carries it all the way to production.</p>
-        <p>I'm drawn to the complicated parts other people would rather avoid: untangling mismatched data sources, modernizing legacy services, and building the back-office tools and automations that keep an organization running. I'm comfortable taking responsibility for the whole path (CI/CD, integrations, deployments, and production operations), not just the code that's fun to write.</p>
-        <p>I've done this across network monitoring, event management, and HR for a range of clients, and I bring the same instinct to each: make it work, make it understandable, and make sure I didn't break anything on the way.</p>
+        <div class="readmore">
+          <input class="readmore-toggle" type="checkbox" id="about-toggle">
+          <p>I'm a backend-leaning full-stack developer with 12+ years of experience, mostly in Python/Django and Node.js, and I build with AI in the loop every day. What defines how I work is <strong>ownership</strong>. I want to understand how a system works, keep it under my control, and be the one who carries it all the way to production, and AI tools let me move faster without giving up that control.</p>
+          <div class="readmore-rest">
+            <p>I'm drawn to the complicated parts other people would rather avoid: untangling mismatched data sources, modernizing legacy services, and building the back-office tools and automations that keep an organization running. I'm comfortable taking responsibility for the whole path (CI/CD, integrations, deployments, and production operations), not just the code that's fun to write.</p>
+            <p>I've done this across network monitoring, event management, and HR for a range of clients, and I bring the same instinct to each: make it work, make it understandable, and make sure I didn't break anything on the way.</p>
+          </div>
+          <label class="readmore-btn" for="about-toggle">
+            <span class="readmore-more">Read more</span>
+            <span class="readmore-less">Show less</span>
+          </label>
+        </div>
       </div>
     </section>
 
@@ -106,6 +114,55 @@
               <li>Python</li><li>monday.com&nbsp;API</li><li>Excel</li><li>Heroku</li>
             </ul>
             <a class="more" href="projects/seminar-scheduler.html">Read the case study →</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Open source -->
+    <section class="section" id="open-source">
+      <div class="container">
+        <h2 class="section-title">Open Source &amp; Side Projects</h2>
+        <p>Things I've built outside client work. Small, but they show how I like to build.</p>
+        <div class="repos">
+
+          <article class="repo">
+            <h3>django-admin-applist-order</h3>
+            <p>A small Django library for controlling the ordering of the app list in Django Admin, packaged and published to PyPI. Extracted from real back-office work and shared.</p>
+            <ul class="tags"><li>Python</li><li>Django</li></ul>
+            <div class="links">
+              <a href="https://github.com/alon-p/django-admin-applist-order" rel="noopener">GitHub →</a>
+              <a href="https://pypi.org/project/django-admin-applist-order/" rel="noopener">PyPI →</a>
+            </div>
+          </article>
+
+          <article class="repo">
+            <h3>project-readme-skill</h3>
+            <p>A Claude skill for creating and maintaining project README files.</p>
+            <ul class="tags"><li>Claude Code skill</li></ul>
+            <div class="links">
+              <a href="https://github.com/alon-p/project-readme-skill" rel="noopener">GitHub →</a>
+            </div>
+          </article>
+
+          <article class="repo">
+            <h3>django-poetry-opinionated-cookiecutter <span class="repo-role">contributor</span></h3>
+            <p>A contribution to an opinionated project template for scaffolding new Django projects with Poetry, the kind of convention-driven, batteries-included setup I reach for. Contributing back to a tool I use.</p>
+            <ul class="tags"><li>Python</li><li>Django</li><li>Poetry</li><li>cookiecutter</li></ul>
+            <div class="links">
+              <a href="https://github.com/alonisser/django-poetry-opinionated-cookiecutter" rel="noopener">GitHub →</a>
+            </div>
+          </article>
+
+          <article class="repo">
+            <h3>online-metronome</h3>
+            <p>A self-contained, in-browser metronome. A fun side project, live on GitHub Pages.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <div class="links">
+              <a href="https://alon-p.github.io/online-metronome/" rel="noopener">Live →</a>
+              <a href="https://github.com/alon-p/online-metronome" rel="noopener">GitHub →</a>
+            </div>
           </article>
 
         </div>
@@ -385,93 +442,6 @@
         <div class="principle">
           <h3><span class="num">05</span>Modernize pragmatically</h3>
           <p>Once I understand it and it's covered, I modernize whatever I can. I favor the tool that solves the problem well over the one that looks impressive. The right call for the client beats the shiny one.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience timeline -->
-    <section class="section" id="experience">
-      <div class="container">
-        <h2 class="section-title">Experience</h2>
-        <ul class="timeline">
-          <li>
-            <div class="role">Full-Stack Developer</div>
-            <div class="meta">Drorsoft · 2020 – Present</div>
-            <ul>
-              <li>Building and maintaining web applications for clients in network monitoring, event management, and HR.</li>
-              <li>Own CI/CD, integration testing, deployments, and production operations across client projects.</li>
-              <li>Mentor junior developers and lead knowledge-sharing within the team.</li>
-            </ul>
-          </li>
-          <li>
-            <div class="role">Education Program Coordinator</div>
-            <div class="meta">Hameorer · 2015 – 2020</div>
-            <ul>
-              <li>Planned and led experiential education programs for groups of university students and IDF units.</li>
-            </ul>
-          </li>
-          <li>
-            <div class="role">Full-Stack Developer</div>
-            <div class="meta">Dror-Israel · 2009 – 2015</div>
-            <ul>
-              <li>Built internal systems from scratch: meeting-room booking, print-house ordering with dynamic pricing, and physical-archive management.</li>
-              <li>Managed the organization's cloud infrastructure and resources on AWS.</li>
-              <li>Stack: Python/TurboGears&nbsp;2, MariaDB, AngularJS, jQuery, Docker, AWS Fargate.</li>
-            </ul>
-          </li>
-          <li>
-            <div class="role">B.Ed in Informal Education</div>
-            <div class="meta">Beit Berl College · 2009 – 2012</div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Open source -->
-    <section class="section" id="open-source">
-      <div class="container">
-        <h2 class="section-title">Open Source &amp; Side Projects</h2>
-        <p>Things I've built outside client work. Small, but they show how I like to build.</p>
-        <div class="repos">
-
-          <article class="repo">
-            <h3>django-admin-applist-order</h3>
-            <p>A small Django library for controlling the ordering of the app list in Django Admin, packaged and published to PyPI. Extracted from real back-office work and shared.</p>
-            <ul class="tags"><li>Python</li><li>Django</li></ul>
-            <div class="links">
-              <a href="https://github.com/alon-p/django-admin-applist-order" rel="noopener">GitHub →</a>
-              <a href="https://pypi.org/project/django-admin-applist-order/" rel="noopener">PyPI →</a>
-            </div>
-          </article>
-
-          <article class="repo">
-            <h3>project-readme-skill</h3>
-            <p>A Claude skill for creating and maintaining project README files.</p>
-            <ul class="tags"><li>Claude Code skill</li></ul>
-            <div class="links">
-              <a href="https://github.com/alon-p/project-readme-skill" rel="noopener">GitHub →</a>
-            </div>
-          </article>
-
-          <article class="repo">
-            <h3>django-poetry-opinionated-cookiecutter <span class="repo-role">contributor</span></h3>
-            <p>A contribution to an opinionated project template for scaffolding new Django projects with Poetry, the kind of convention-driven, batteries-included setup I reach for. Contributing back to a tool I use.</p>
-            <ul class="tags"><li>Python</li><li>Django</li><li>Poetry</li><li>cookiecutter</li></ul>
-            <div class="links">
-              <a href="https://github.com/alonisser/django-poetry-opinionated-cookiecutter" rel="noopener">GitHub →</a>
-            </div>
-          </article>
-
-          <article class="repo">
-            <h3>online-metronome</h3>
-            <p>A self-contained, in-browser metronome. A fun side project, live on GitHub Pages.</p>
-            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-            <div class="links">
-              <a href="https://alon-p.github.io/online-metronome/" rel="noopener">Live →</a>
-              <a href="https://github.com/alon-p/online-metronome" rel="noopener">GitHub →</a>
-            </div>
-          </article>
-
         </div>
       </div>
     </section>
